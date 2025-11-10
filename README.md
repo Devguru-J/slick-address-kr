@@ -3,7 +3,7 @@
 팝업 없는 한국 주소 검색 라이브러리 - No popup Korean address search library
 
 [![npm version](https://img.shields.io/npm/v/korean-address-finder.svg)](https://www.npmjs.com/package/korean-address-finder)
-[![license](https://img.shields.io/npm/l/korean-address-finder.svg)](https://github.com/yourusername/korean-address-finder/blob/main/LICENSE)
+[![license](https://img.shields.io/npm/l/korean-address-finder.svg)](https://github.com/Devguru-J/korean-address-finder/blob/main/LICENSE)
 
 ## 특징
 
@@ -424,8 +424,8 @@ MIT License - 자유롭게 사용하세요!
 
 ## 지원
 
-- 이슈: [GitHub Issues](https://github.com/yourusername/korean-address-finder/issues)
-- 이메일: your.email@example.com
+- 이슈: [GitHub Issues](https://github.com/Devguru-J/korean-address-finder/issues)
+- GitHub: [@Devguru-J](https://github.com/Devguru-J)
 
 ---
 

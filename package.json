@@ -1,8 +1,8 @@
 {
-  "name": "independent-address-kr",
+  "name": "korean-address-finder",
   "version": "1.0.0",
-  "description": "Korean address search component without popup - 팝업 없는 한국 주소 검색 컴포넌트",
-  "main": "dist/index.js",
+  "description": "Korean address search component with autocomplete - no popup required. 팝업 없는 한국 주소 검색 컴포넌트 (자동완성 지원)",
+  "main": "korean-address-finder.js",
   "types": "dist/index.d.ts",
   "scripts": {
     "build": "tsc && npm run copy-css",
@@ -14,18 +14,27 @@
   "keywords": [
     "korean",
     "address",
+    "autocomplete",
     "도로명주소",
     "주소검색",
+    "자동완성",
     "address-search",
     "juso",
     "postcode",
-    "우편번호"
+    "우편번호",
+    "korea",
+    "daum-address",
+    "address-finder"
   ],
   "author": "Devguru-J",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Devguru-J/independent-address-kr.git"
+    "url": "https://github.com/Devguru-J/korean-address-finder.git"
+  },
+  "homepage": "https://github.com/Devguru-J/korean-address-finder#readme",
+  "bugs": {
+    "url": "https://github.com/Devguru-J/korean-address-finder/issues"
   },
   "dependencies": {},
   "devDependencies": {
@@ -33,7 +42,14 @@
   },
   "files": [
     "dist",
+    "korean-address-finder.js",
+    "config.example.js",
+    "index.html",
     "README.md",
+    "README-KR.md",
+    "HOW-TO-USE.md",
+    "API-KEY-GUIDE.md",
+    "AUTOCOMPLETE-GUIDE.md",
     "LICENSE"
   ]
 }
