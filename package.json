@@ -1,5 +1,5 @@
 {
-  "name": "korean-address-finder",
+  "name": "independent-address-kr",
   "version": "1.0.0",
   "description": "Korean address search component without popup - 팝업 없는 한국 주소 검색 컴포넌트",
   "main": "dist/index.js",
@@ -21,11 +21,11 @@
     "postcode",
     "우편번호"
   ],
-  "author": "",
+  "author": "Devguru-J",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "https://github.com/Devguru-J/independent-address-kr.git"
   },
   "dependencies": {},
   "devDependencies": {
