@@ -1,0 +1,39 @@
+{
+  "name": "korean-address-finder",
+  "version": "1.0.0",
+  "description": "Korean address search component without popup - 팝업 없는 한국 주소 검색 컴포넌트",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc && npm run copy-css",
+    "copy-css": "cp src/styles.css dist/styles.css",
+    "dev": "tsc --watch",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "npm run build"
+  },
+  "keywords": [
+    "korean",
+    "address",
+    "도로명주소",
+    "주소검색",
+    "address-search",
+    "juso",
+    "postcode",
+    "우편번호"
+  ],
+  "author": "",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "typescript": "^5.3.3"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ]
+}

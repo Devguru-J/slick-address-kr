@@ -1,0 +1,25 @@
+node_modules/
+dist/
+*.log
+.DS_Store
+.env
+.env.local
+.vscode/
+*.swp
+*.swo
+
+# 설정 파일 (API 키 포함)
+config.js
+examples/config.js
+examples/backend-proxy/.env
+/config.js
+
+# OS 파일
+Thumbs.db
+.Spotlight-V100
+.Trashes
+
+# IDE
+.idea/
+*.sublime-project
+*.sublime-workspace

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>한국 주소 검색</title>
+  <style>
+    body {
+      font-family: 'Malgun Gothic', -apple-system, sans-serif;
+      max-width: 800px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: #f5f5f5;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+
+    .container {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+
+    .info-box {
+      background-color: #e3f2fd;
+      padding: 15px;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      font-size: 14px;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+  <h1>🏠 한국 주소 검색</h1>
+
+  <div class="container">
+    <div class="info-box">
+      <strong>💡 사용 방법:</strong><br>
+      1. 아래 검색창에 주소를 입력하세요 (예: 판교역로)<br>
+      2. <strong>자동으로 검색 결과가 나타납니다!</strong> (2글자 이상 입력 시)<br>
+      3. 목록에서 원하는 주소를 클릭하세요<br>
+      <br>
+      <strong>✨ 자동완성 기능:</strong> 타이핑하는 즉시 결과가 표시됩니다!
+    </div>
+
+    <!-- 주소 검색 컴포넌트가 여기에 렌더링됩니다 -->
+    <div id="address-finder"></div>
+  </div>
+
+  <!-- 1. config.js 파일 로드 (API 키 포함) -->
+  <script src="config.js"></script>
+
+  <!-- 2. 주소 검색 라이브러리 로드 -->
+  <script src="korean-address-finder.js"></script>
+
+  <!-- 3. 초기화 -->
+  <script>
+    // config.js에서 API 키 가져오기
+    const apiKey = window.CONFIG && window.CONFIG.jusoApiKey
+      ? window.CONFIG.jusoApiKey
+      : 'devU01TX0FVVEgyMDI1MDExMDE1MTY0MTExNTM2MjY='; // 기본 테스트 키
+
+    // 주소 검색 초기화
+    const addressFinder = new KoreanAddressFinder({
+      containerId: 'address-finder',
+      apiKey: apiKey,
+      onSelect: function(address) {
+        console.log('선택된 주소:', address);
+
+        // 여기서 폼에 값을 채우거나 서버로 전송
+        // 예시:
+        // document.getElementById('zipcode').value = address.zipCode;
+        // document.getElementById('address1').value = address.roadAddress;
+      }
+    });
+
+    addressFinder.init();
+  </script>
+</body>
+</html>
