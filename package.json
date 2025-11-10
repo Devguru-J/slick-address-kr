@@ -33,7 +33,7 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Devguru-J/slick-address-kr.git"
+    "url": "git+https://github.com/Devguru-J/slick-address-kr.git"
   },
   "homepage": "https://github.com/Devguru-J/slick-address-kr#readme",
   "bugs": {
