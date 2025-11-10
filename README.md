@@ -411,4 +411,4 @@ MIT License - 자유롭게 사용하세요!
 
 ---
 
-**Project took down by Devguru-J**
+**Project tango down by Devguru-J**
