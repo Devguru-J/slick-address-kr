@@ -1,7 +1,7 @@
 {
-  "name": "korean-address-finder",
+  "name": "slick-address-kr",
   "version": "1.0.0",
-  "description": "Korean address search component with autocomplete - no popup required. 팝업 없는 한국 주소 검색 컴포넌트 (자동완성 지원)",
+  "description": "행정안전부 도로명주소 API 기반 팝업 없는 한국 주소 검색 컴포넌트 (자동완성 지원) - Korean address search with autocomplete using official road address API",
   "main": "korean-address-finder.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -23,18 +23,21 @@
     "postcode",
     "우편번호",
     "korea",
+    "도로명주소API",
+    "행정안전부",
     "daum-address",
-    "address-finder"
+    "address-finder",
+    "road-address"
   ],
   "author": "Devguru-J",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Devguru-J/korean-address-finder.git"
+    "url": "https://github.com/Devguru-J/slick-address-kr.git"
   },
-  "homepage": "https://github.com/Devguru-J/korean-address-finder#readme",
+  "homepage": "https://github.com/Devguru-J/slick-address-kr#readme",
   "bugs": {
-    "url": "https://github.com/Devguru-J/korean-address-finder/issues"
+    "url": "https://github.com/Devguru-J/slick-address-kr/issues"
   },
   "dependencies": {},
   "devDependencies": {

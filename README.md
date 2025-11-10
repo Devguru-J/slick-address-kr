@@ -1,9 +1,11 @@
-# Korean Address Finder
+# Slick Address KR
 
-팝업 없는 한국 주소 검색 라이브러리 - No popup Korean address search library
+행정안전부 도로명주소 API 기반 팝업 없는 한국 주소 검색 라이브러리
 
-[![npm version](https://img.shields.io/npm/v/korean-address-finder.svg)](https://www.npmjs.com/package/korean-address-finder)
-[![license](https://img.shields.io/npm/l/korean-address-finder.svg)](https://github.com/Devguru-J/korean-address-finder/blob/main/LICENSE)
+Korean address search library using official road address API - No popup required
+
+[![npm version](https://img.shields.io/npm/v/slick-address-kr.svg)](https://www.npmjs.com/package/slick-address-kr)
+[![license](https://img.shields.io/npm/l/slick-address-kr.svg)](https://github.com/Devguru-J/slick-address-kr/blob/main/LICENSE)
 
 ## 특징
 
@@ -18,13 +20,13 @@
 ## 설치
 
 ```bash
-npm install korean-address-finder
+npm install slick-address-kr
 ```
 
 또는
 
 ```bash
-yarn add korean-address-finder
+yarn add slick-address-kr
 ```
 
 ## 빠른 시작
@@ -424,7 +426,7 @@ MIT License - 자유롭게 사용하세요!
 
 ## 지원
 
-- 이슈: [GitHub Issues](https://github.com/Devguru-J/korean-address-finder/issues)
+- 이슈: [GitHub Issues](https://github.com/Devguru-J/slick-address-kr/issues)
 - GitHub: [@Devguru-J](https://github.com/Devguru-J)
 
 ---
