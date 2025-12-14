@@ -1,6 +1,6 @@
 {
   "name": "slick-address-kr",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "행정안전부 도로명주소 API 기반 팝업 없는 한국 주소 검색 컴포넌트 (자동완성 지원) - Korean address search with autocomplete using official road address API",
   "main": "korean-address-finder.js",
   "types": "dist/index.d.ts",
