@@ -5,6 +5,21 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.3] - 2025-12-14
+
+### Changed
+- **패키지 매니저 호환성 개선**
+  - README에 pnpm, bun, deno 설치 방법 추가
+  - package.json keywords에 pnpm, bun, deno, keyboard-navigation 추가
+  - 특징 섹션에 "모든 패키지 매니저 지원" 항목 추가
+  - npm 검색 가능성 향상
+
+### Documentation
+- 설치 가이드 개선 (5가지 패키지 매니저 지원 명시)
+- 검색 키워드 최적화
+
+---
+
 ## [1.0.2] - 2025-12-14
 
 ### Added
