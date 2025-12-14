@@ -14,6 +14,7 @@ Korean address search library using official road address API - No popup require
 - 📱 **반응형 디자인**: 모바일부터 데스크톱까지 완벽 지원
 - 🎨 **커스터마이징 가능**: CSS로 쉽게 스타일 변경 가능
 - ⚡ **자동완성 모드**: 타이핑하는 즉시 검색 결과 표시
+- ⌨️ **키보드 네비게이션**: 화살표 키로 결과 선택, 엔터로 적용 - 마우스 없이 빠른 입력!
 - 🔒 **TypeScript 지원**: 완전한 타입 정의 제공
 - 🌐 **프레임워크 무관**: Vanilla JS, React, Vue 등 어디서나 사용 가능
 
@@ -252,6 +253,31 @@ const finder = new KoreanAddressFinder({
 
 finder.init();
 ```
+
+### 키보드 네비게이션 🆕
+
+마우스 없이 키보드만으로 주소를 빠르게 입력할 수 있습니다!
+
+**사용 방법:**
+- **⬇️ 화살표 아래**: 다음 검색 결과로 이동
+- **⬆️ 화살표 위**: 이전 검색 결과로 이동
+- **Enter**: 선택된 주소를 폼에 적용
+- **ESC**: 검색 결과 닫기
+
+```javascript
+// 자동완성 모드에서 키보드 네비게이션이 자동으로 활성화됩니다
+const finder = new KoreanAddressFinder({
+  autocompleteMode: true,  // 타이핑 시 자동 검색
+  onSelect: (address) => {
+    console.log('선택된 주소:', address);
+    // 폼에 자동으로 입력됩니다
+  }
+});
+
+finder.init();
+```
+
+**데모:** `examples/proxy-test.html`에서 키보드 네비게이션을 체험할 수 있습니다.
 
 ### 상세주소 입력 없이 사용
 
