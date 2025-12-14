@@ -20,14 +20,29 @@ Korean address search library using official road address API - No popup require
 
 ## 설치
 
+### npm
 ```bash
 npm install slick-address-kr
 ```
 
-또는
-
+### yarn
 ```bash
 yarn add slick-address-kr
+```
+
+### pnpm
+```bash
+pnpm add slick-address-kr
+```
+
+### bun
+```bash
+bun add slick-address-kr
+```
+
+### deno
+```typescript
+import { KoreanAddressFinder } from "npm:slick-address-kr@1.0.2";
 ```
 
 ## 빠른 시작
