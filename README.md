@@ -17,6 +17,7 @@ Korean address search library using official road address API - No popup require
 - ⌨️ **키보드 네비게이션**: 화살표 키로 결과 선택, 엔터로 적용 - 마우스 없이 빠른 입력!
 - 🔒 **TypeScript 지원**: 완전한 타입 정의 제공
 - 🌐 **프레임워크 무관**: Vanilla JS, React, Vue 등 어디서나 사용 가능
+- 📦 **모든 패키지 매니저 지원**: npm, yarn, pnpm, bun, deno 모두 호환
 
 ## 설치
 

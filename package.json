@@ -27,7 +27,11 @@
     "행정안전부",
     "daum-address",
     "address-finder",
-    "road-address"
+    "road-address",
+    "pnpm",
+    "bun",
+    "deno",
+    "keyboard-navigation"
   ],
   "author": "Devguru-J",
   "license": "MIT",
