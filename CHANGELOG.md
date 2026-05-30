@@ -5,6 +5,23 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
+## [1.0.4] - 2026-05-30
+
+### Fixed
+- **만료된 내장 테스트 API 키 제거** 🔑
+  - 더 이상 동작하지 않는 기본 dev 키(`devU01...`)를 제거
+  - API 키 미설정 시 명확한 안내 메시지와 키 발급 링크 제공
+- **XSS 방어**: API 응답값을 `innerHTML`에 삽입할 때 HTML 이스케이프 처리 추가
+- **`keypress` → `keydown`**: deprecated 이벤트를 표준 이벤트로 교체
+
+### Documentation
+- README: API 키 필수 안내 및 "승인되지 않은 KEY" 오류 해결 섹션 추가
+- README: 도메인 등록 관련 CORS 안내 보강
+- README: deno import 예제 버전 갱신 (1.0.2 → 1.0.4)
+- `package.json` files 목록의 잘못된 파일명 수정 (`README-KR.md` → `README.ko.md`)
+
+---
+
 ## [1.0.3] - 2025-12-14
 
 ### Changed

@@ -15,6 +15,18 @@
   const API_URL = 'https://business.juso.go.kr/addrlink/addrLinkApi.do';
 
   /**
+   * HTML 특수문자 이스케이프 (XSS 방지)
+   */
+  function escapeHtml(value) {
+    return String(value == null ? '' : value)
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+  }
+
+  /**
    * 주소 검색 클래스
    */
   class KoreanAddressFinder {
@@ -28,7 +40,10 @@
       this.debounceTimer = null; // 디바운스 타이머
 
       if (!this.apiKey) {
-        console.warn('⚠️ API 키가 설정되지 않았습니다. config.js 파일을 확인하세요.');
+        console.warn(
+          '⚠️ API 키가 설정되지 않았습니다. 행정안전부 도로명주소 사이트에서 "검색 API" 키를 발급받아 apiKey 옵션으로 전달하세요.\n' +
+          '키 발급: https://business.juso.go.kr/addrlink/openApi/searchApi.do'
+        );
       }
     }
 
@@ -203,7 +218,7 @@
       button.addEventListener('click', () => this.search(input.value));
 
       // 엔터키 검색
-      input.addEventListener('keypress', (e) => {
+      input.addEventListener('keydown', (e) => {
         if (e.key === 'Enter') {
           this.search(input.value);
         }
@@ -300,17 +315,20 @@
 
       let html = '';
       addresses.forEach(addr => {
+        const zipNo = escapeHtml(addr.zipNo);
+        const roadAddr = escapeHtml(addr.roadAddr);
+        const jibunAddr = escapeHtml(addr.jibunAddr);
         html += `
-          <div class="kaf-result-item" data-zipno="${addr.zipNo}" data-road="${addr.roadAddr}" data-jibun="${addr.jibunAddr}">
+          <div class="kaf-result-item" data-zipno="${zipNo}" data-road="${roadAddr}" data-jibun="${jibunAddr}">
             <div>
               <span class="kaf-result-type">도로명</span>
-              <span class="kaf-result-address">${addr.roadAddr}</span>
+              <span class="kaf-result-address">${roadAddr}</span>
             </div>
             <div style="margin-top: 4px;">
               <span class="kaf-result-type" style="background-color: #999;">지번</span>
-              <span class="kaf-result-address">${addr.jibunAddr}</span>
+              <span class="kaf-result-address">${jibunAddr}</span>
             </div>
-            <div class="kaf-result-zipcode">우편번호: ${addr.zipNo}</div>
+            <div class="kaf-result-zipcode">우편번호: ${zipNo}</div>
           </div>
         `;
       });
@@ -339,9 +357,9 @@
 
       selectedDiv.innerHTML = `
         <h3>✅ 선택된 주소</h3>
-        <p><strong>우편번호:</strong> ${address.zipCode}</p>
-        <p><strong>도로명 주소:</strong> ${address.roadAddress}</p>
-        <p><strong>지번 주소:</strong> ${address.jibunAddress}</p>
+        <p><strong>우편번호:</strong> ${escapeHtml(address.zipCode)}</p>
+        <p><strong>도로명 주소:</strong> ${escapeHtml(address.roadAddress)}</p>
+        <p><strong>지번 주소:</strong> ${escapeHtml(address.jibunAddress)}</p>
       `;
 
       selectedDiv.style.display = 'block';

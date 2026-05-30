@@ -9,8 +9,9 @@ export class AddressApiClient {
   private confmKey: string;
 
   constructor(apiKey?: string) {
-    // API 키가 없는 경우 공개 테스트 키 사용 (실제 서비스에서는 발급받아야 함)
-    this.confmKey = apiKey || 'devU01TX0FVVEgyMDI1MDExMDE1MTY0MTExNTM2MjY=';
+    // API 키는 필수입니다. 행정안전부 도로명주소 사이트에서 직접 발급받아야 합니다.
+    // https://business.juso.go.kr/addrlink/openApi/searchApi.do
+    this.confmKey = apiKey || '';
   }
 
   /**
@@ -27,6 +28,13 @@ export class AddressApiClient {
   ): Promise<{ results: AddressResult[]; totalCount: number }> {
     if (!keyword || keyword.trim().length === 0) {
       return { results: [], totalCount: 0 };
+    }
+
+    if (!this.confmKey) {
+      throw new Error(
+        'API 키가 설정되지 않았습니다. KoreanAddressFinder 생성 시 apiKey 옵션을 전달하세요. ' +
+          '키 발급: https://business.juso.go.kr/addrlink/openApi/searchApi.do'
+      );
     }
 
     try {

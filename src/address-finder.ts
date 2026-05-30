@@ -104,7 +104,7 @@ export class KoreanAddressFinder {
     searchBtn?.addEventListener('click', () => this.handleSearch());
 
     // 검색 입력 엔터키
-    this.searchInput?.addEventListener('keypress', (e) => {
+    this.searchInput?.addEventListener('keydown', (e) => {
       if (e.key === 'Enter') {
         this.handleSearch();
       }
@@ -181,14 +181,14 @@ export class KoreanAddressFinder {
         <div class="kaf-result-item" data-index="${index}">
           <div class="kaf-result-main">
             <span class="kaf-result-type">도로명</span>
-            <span class="kaf-result-address">${result.roadAddress}</span>
+            <span class="kaf-result-address">${this.escapeHtml(result.roadAddress)}</span>
           </div>
           <div class="kaf-result-sub">
             <span class="kaf-result-type">지번</span>
-            <span class="kaf-result-address">${result.jibunAddress}</span>
+            <span class="kaf-result-address">${this.escapeHtml(result.jibunAddress)}</span>
           </div>
-          <div class="kaf-result-zipcode">우편번호: ${result.zipCode}</div>
-          ${result.buildingName ? `<div class="kaf-result-building">${result.buildingName}</div>` : ''}
+          <div class="kaf-result-zipcode">우편번호: ${this.escapeHtml(result.zipCode)}</div>
+          ${result.buildingName ? `<div class="kaf-result-building">${this.escapeHtml(result.buildingName)}</div>` : ''}
         </div>
       `).join('');
 
@@ -211,10 +211,10 @@ export class KoreanAddressFinder {
       selectedContainer.innerHTML = `
         <div class="kaf-selected-content">
           <div class="kaf-selected-main">
-            <strong>도로명:</strong> ${address.roadAddress}
+            <strong>도로명:</strong> ${this.escapeHtml(address.roadAddress)}
           </div>
           <div class="kaf-selected-sub">
-            <strong>우편번호:</strong> ${address.zipCode}
+            <strong>우편번호:</strong> ${this.escapeHtml(address.zipCode)}
           </div>
         </div>
       `;
@@ -269,6 +269,18 @@ export class KoreanAddressFinder {
       resultsList.innerHTML = `<div class="kaf-error">${message}</div>`;
       this.openResults();
     }
+  }
+
+  /**
+   * HTML 특수문자 이스케이프 (XSS 방지)
+   */
+  private escapeHtml(value: string): string {
+    return String(value ?? '')
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;')
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
   }
 
   /**

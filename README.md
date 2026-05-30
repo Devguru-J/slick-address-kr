@@ -43,7 +43,7 @@ bun add slick-address-kr
 
 ### deno
 ```typescript
-import { KoreanAddressFinder } from "npm:slick-address-kr@1.0.2";
+import { KoreanAddressFinder } from "npm:slick-address-kr@1.0.4";
 ```
 
 ## 빠른 시작
@@ -430,13 +430,24 @@ MIT License - 자유롭게 사용하세요!
 
 ## 문제 해결
 
+### "승인되지 않은 KEY 입니다" 오류가 나요
+
+이 라이브러리는 **API 키가 필수**입니다. 키 없이 사용하면 동작하지 않습니다.
+
+1. [행정안전부 도로명주소 OpenAPI](https://business.juso.go.kr/addrlink/openApi/searchApi.do)에서 **"검색 API"** 키를 직접 발급받으세요. (팝업 API 아님!)
+2. 발급받은 키를 `apiKey` 옵션으로 전달하세요:
+   ```js
+   new KoreanAddressFinder({ apiKey: '발급받은_본인_키', /* ... */ });
+   ```
+3. 행정안전부 **개발용(dev) 키는 발급 후 일정 기간이 지나면 만료**됩니다. 만료 시 새로 발급받으세요.
+
 ### CORS 에러가 발생해요
 
 행정안전부 API는 CORS를 지원합니다. 만약 에러가 발생한다면:
 
 1. API 키가 올바른지 확인
 2. ⚠️ **중요: API 발급 시 "검색 API"로 발급받았는지 확인** (팝업 API가 아님!)
-3. 도메인이 승인된 도메인인지 확인
+3. **키 발급 시 등록한 도메인에서만 호출이 허용됩니다.** 사용할 도메인(예: `localhost`, 실제 서비스 도메인)을 juso.go.kr에 등록했는지 확인하세요.
 4. HTTPS 사용 권장
 
 ### 검색 결과가 나오지 않아요
